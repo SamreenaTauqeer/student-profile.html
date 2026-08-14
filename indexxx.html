@@ -1,0 +1,1275 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank | Modern Digital Banking</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        :root {
+            --primary: #063b32;
+            --primary-light: #0b6657;
+            --accent: #d9a441;
+            --cream: #f7f5ef;
+            --white: #ffffff;
+            --text: #17231f;
+            --muted: #68736f;
+            --border: #e5e8e5;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .topbar {
+            background: #022c25;
+            color: white;
+            padding: 9px 6%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+            font-size: 13px;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            width: 88%;
+            max-width: 1250px;
+            margin: auto;
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--accent);
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 12px 21px;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background: white;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-gold {
+            background: var(--accent);
+            color: #14251f;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(3, 48, 41, .98), rgba(3, 48, 41, .80)),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Crect width='900' height='600' fill='%23063b32'/%3E%3Ccircle cx='700' cy='100' r='250' fill='%230b6657' opacity='.7'/%3E%3Ccircle cx='800' cy='450' r='280' fill='%23d9a441' opacity='.15'/%3E%3C/svg%3E");
+
+            color: white;
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            width: 88%;
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(42px, 5vw, 67px);
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent);
+        }
+
+        .hero-text p {
+            max-width: 560px;
+            color: #d8e5e0;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* HERO BANK CARD */
+
+        .hero-card-area {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .bank-card {
+            width: 390px;
+            height: 240px;
+            border-radius: 22px;
+            padding: 28px;
+            background:
+                linear-gradient(135deg, #d5a23e, #f0cf7c 45%, #a97924);
+            color: #17382e;
+            box-shadow: 0 35px 60px rgba(0,0,0,.3);
+            transform: rotate(5deg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bank-card::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 2px solid rgba(255,255,255,.35);
+            border-radius: 50%;
+            right: -80px;
+            bottom: -80px;
+        }
+
+        .card-name {
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .chip {
+            margin-top: 55px;
+            width: 52px;
+            height: 38px;
+            border-radius: 8px;
+            background: linear-gradient(135deg,#eee,#999);
+            position: relative;
+        }
+
+        .chip::before,
+        .chip::after {
+            content: "";
+            position: absolute;
+            background: #777;
+        }
+
+        .chip::before {
+            width: 100%;
+            height: 2px;
+            top: 18px;
+        }
+
+        .chip::after {
+            width: 2px;
+            height: 100%;
+            left: 25px;
+        }
+
+        .card-number {
+            margin-top: 25px;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+
+        .card-bottom {
+            margin-top: 14px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+        }
+
+        /* ================= QUICK SERVICES ================= */
+
+        .quick-services {
+            margin-top: -45px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .quick-grid {
+            width: 82%;
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 45px rgba(0,0,0,.12);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: hidden;
+        }
+
+        .quick-item {
+            padding: 27px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .quick-item:last-child {
+            border: none;
+        }
+
+        .quick-icon {
+            width: 52px;
+            height: 52px;
+            margin: auto auto 12px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #e9f2ef;
+            color: var(--primary);
+            font-size: 23px;
+        }
+
+        .quick-item h4 {
+            margin-bottom: 5px;
+        }
+
+        .quick-item p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        .section {
+            padding: 100px 6%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: auto auto 55px;
+        }
+
+        .section-heading .small-title {
+            color: var(--primary-light);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            margin: 10px 0 15px;
+            color: var(--primary);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .product-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px;
+            transition: .3s;
+            background: white;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,.08);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: #edf5f2;
+            color: var(--primary);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 28px;
+            margin-bottom: 22px;
+        }
+
+        .product-card h3 {
+            color: var(--primary);
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .learn-more {
+            color: var(--primary-light);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* ================= FEATURE ================= */
+
+        .feature {
+            background: var(--cream);
+        }
+
+        .feature-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .phone-area {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .phone {
+            width: 275px;
+            height: 535px;
+            background: #101816;
+            border: 8px solid #27332f;
+            border-radius: 38px;
+            padding: 13px;
+            box-shadow: 20px 30px 50px rgba(0,0,0,.2);
+        }
+
+        .phone-screen {
+            height: 100%;
+            background: #f7faf8;
+            border-radius: 27px;
+            overflow: hidden;
+        }
+
+        .phone-top {
+            background: var(--primary);
+            color: white;
+            padding: 28px 18px;
+        }
+
+        .phone-top small {
+            opacity: .7;
+        }
+
+        .balance {
+            font-size: 27px;
+            font-weight: bold;
+            margin-top: 7px;
+        }
+
+        .phone-menu {
+            padding: 18px;
+        }
+
+        .phone-row {
+            background: white;
+            border-radius: 12px;
+            padding: 13px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.05);
+            font-size: 13px;
+        }
+
+        .feature-content .small-title {
+            color: var(--primary-light);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .feature-content h2 {
+            font-size: 42px;
+            line-height: 1.15;
+            color: var(--primary);
+            margin: 12px 0 18px;
+        }
+
+        .feature-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .feature-list li {
+            margin-bottom: 13px;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        /* ================= OFFERS ================= */
+
+        .offers {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .offer {
+            min-height: 250px;
+            padding: 35px;
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+            background: var(--primary);
+            color: white;
+        }
+
+        .offer:nth-child(2) {
+            background: #d9a441;
+            color: #17382e;
+        }
+
+        .offer h3 {
+            font-size: 28px;
+            max-width: 340px;
+            margin-bottom: 12px;
+        }
+
+        .offer p {
+            max-width: 400px;
+            opacity: .85;
+        }
+
+        .offer-circle {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 2px solid rgba(255,255,255,.2);
+            border-radius: 50%;
+            right: -70px;
+            bottom: -80px;
+        }
+
+        /* ================= LOCATION ================= */
+
+        .location-section {
+            background: #f4f7f5;
+        }
+
+        .location-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .location-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .location-card h3 {
+            color: var(--primary);
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .location-card p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .fake-map {
+            height: 180px;
+            border-radius: 12px;
+            background:
+                linear-gradient(35deg, transparent 48%, #a9c5b9 49%, #a9c5b9 52%, transparent 53%),
+                linear-gradient(130deg, transparent 48%, #d3ddd8 49%, #d3ddd8 52%, transparent 53%),
+                #e9eee9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-road {
+            position: absolute;
+            width: 130%;
+            height: 35px;
+            background: #fff;
+            transform: rotate(-20deg);
+            top: 75px;
+            left: -30px;
+        }
+
+        .map-pin {
+            position: absolute;
+            left: 48%;
+            top: 55px;
+            font-size: 38px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #022c25;
+            color: white;
+            padding: 70px 6% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .footer-brand p {
+            color: #b9cbc5;
+            max-width: 300px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        footer h4 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 11px;
+            color: #c4d1cd;
+            font-size: 14px;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,.15);
+            color: #a7b8b2;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container,
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-card-area {
+                margin-top: 30px;
+            }
+
+            .quick-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .topbar {
+                display: none;
+            }
+
+            .navbar {
+                height: 68px;
+            }
+
+            .nav-buttons .btn-outline {
+                display: none;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .hero-text h1 {
+                font-size: 43px;
+            }
+
+            .bank-card {
+                width: 310px;
+                height: 195px;
+            }
+
+            .chip {
+                margin-top: 30px;
+            }
+
+            .card-number {
+                font-size: 15px;
+            }
+
+            .quick-grid {
+                grid-template-columns: 1fr 1fr;
+                width: 92%;
+            }
+
+            .quick-item {
+                padding: 20px 10px;
+            }
+
+            .section {
+                padding: 70px 5%;
+            }
+
+            .section-heading h2,
+            .feature-content h2 {
+                font-size: 33px;
+            }
+
+            .product-grid,
+            .offers,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <span>Personal Banking</span>
+        <span>Business Banking</span>
+        <span>Help & Support</span>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">N</span>
+                Nexa Bank
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#accounts">Accounts</a></li>
+                <li><a href="#cards">Cards</a></li>
+                <li><a href="#digital">Digital Banking</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">Contact</a>
+                <a href="#" class="btn btn-primary">Login</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <div class="hero-text">
+
+                <h1>
+                    Banking made
+                    <span>simple.</span>
+                </h1>
+
+                <p>
+                    A smarter way to manage your money.
+                    Open an account, manage your cards and
+                    access your finances wherever you are.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#accounts" class="btn btn-gold">
+                        Open an Account
+                    </a>
+
+                    <a href="#digital" class="btn"
+                       style="border:1px solid white;color:white;">
+                        Explore Digital Banking
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card-area">
+
+                <div class="bank-card">
+
+                    <div class="card-name">
+                        NEXA BANK
+                    </div>
+
+                    <div class="chip"></div>
+
+                    <div class="card-number">
+                        5482 &nbsp; 7264 &nbsp; 1938 &nbsp; 4521
+                    </div>
+
+                    <div class="card-bottom">
+                        <span>VALID THRU 08/30</span>
+                        <strong>SIGNATURE</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK SERVICES -->
+
+    <section class="quick-services">
+
+        <div class="quick-grid">
+
+            <div class="quick-item">
+                <div class="quick-icon">↗</div>
+                <h4>Transfer Money</h4>
+                <p>Send money securely</p>
+            </div>
+
+            <div class="quick-item">
+                <div class="quick-icon">▣</div>
+                <h4>Pay Bills</h4>
+                <p>Pay bills in seconds</p>
+            </div>
+
+            <div class="quick-item">
+                <div class="quick-icon">⌁</div>
+                <h4>Find an ATM</h4>
+                <p>Locate nearby ATMs</p>
+            </div>
+
+            <div class="quick-item">
+                <div class="quick-icon">?</div>
+                <h4>Get Support</h4>
+                <p>We're here to help</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCOUNTS -->
+
+    <section class="section" id="accounts">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                Banking Products
+            </div>
+
+            <h2>Accounts designed for you</h2>
+
+            <p>
+                Whether you're saving for the future,
+                managing everyday expenses or growing
+                your business, we have an account for you.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <div class="product-icon">₨</div>
+
+                <h3>Current Account</h3>
+
+                <p>
+                    Flexible everyday banking with convenient
+                    access to your money and digital services.
+                </p>
+
+                <a href="#" class="learn-more">
+                    Explore Account →
+                </a>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-icon">♧</div>
+
+                <h3>Savings Account</h3>
+
+                <p>
+                    Build your savings with an account designed
+                    to help you reach your financial goals.
+                </p>
+
+                <a href="#" class="learn-more">
+                    Explore Account →
+                </a>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-icon">◆</div>
+
+                <h3>Premium Banking</h3>
+
+                <p>
+                    Exclusive banking benefits and personalized
+                    financial services for premium customers.
+                </p>
+
+                <a href="#" class="learn-more">
+                    Explore Account →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIGITAL BANKING -->
+
+    <section class="section feature" id="digital">
+
+        <div class="feature-container">
+
+            <div class="phone-area">
+
+                <div class="phone">
+
+                    <div class="phone-screen">
+
+                        <div class="phone-top">
+
+                            <small>Good evening</small>
+
+                            <div class="balance">
+                                ₨ 248,500
+                            </div>
+
+                            <small>Available balance</small>
+
+                        </div>
+
+                        <div class="phone-menu">
+
+                            <div class="phone-row">
+                                💸 &nbsp; Send Money
+                            </div>
+
+                            <div class="phone-row">
+                                💳 &nbsp; Pay Credit Card
+                            </div>
+
+                            <div class="phone-row">
+                                📱 &nbsp; Mobile Top-up
+                            </div>
+
+                            <div class="phone-row">
+                                📊 &nbsp; Transaction History
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-content">
+
+                <div class="small-title">
+                    Digital Banking
+                </div>
+
+                <h2>
+                    Your bank,
+                    always with you.
+                </h2>
+
+                <p>
+                    Take control of your finances with our
+                    secure digital banking experience. Manage
+                    your account anytime, anywhere.
+                </p>
+
+                <ul class="feature-list">
+                    <li>View your account balance</li>
+                    <li>Transfer money instantly</li>
+                    <li>Pay utility bills</li>
+                    <li>Manage your cards</li>
+                    <li>Track your transactions</li>
+                </ul>
+
+                <a href="#" class="btn btn-primary">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFERS -->
+
+    <section class="section" id="offers">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                Latest Offers
+            </div>
+
+            <h2>More value with Nexa</h2>
+
+            <p>
+                Discover special offers and benefits
+                available to our customers.
+            </p>
+
+        </div>
+
+
+        <div class="offers">
+
+            <div class="offer">
+
+                <h3>
+                    Shop more.
+                    Save more.
+                </h3>
+
+                <p>
+                    Enjoy exclusive discounts at selected
+                    restaurants, stores and online merchants.
+                </p>
+
+                <div class="offer-circle"></div>
+
+            </div>
+
+
+            <div class="offer">
+
+                <h3>
+                    Upgrade your
+                    banking experience.
+                </h3>
+
+                <p>
+                    Get premium benefits and enhanced
+                    services with our Platinum Card.
+                </p>
+
+                <div class="offer-circle"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ATM / LOCATION -->
+
+    <section class="section location-section" id="locations">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                Find Us
+            </div>
+
+            <h2>We're never too far away</h2>
+
+            <p>
+                Find a branch or ATM near you.
+            </p>
+
+        </div>
+
+
+        <div class="location-grid">
+
+            <div class="location-card">
+
+                <h3>Find an ATM</h3>
+
+                <p>
+                    Locate the nearest ATM and get cash
+                    whenever you need it.
+                </p>
+
+                <div class="fake-map">
+
+                    <div class="map-road"></div>
+
+                    <div class="map-pin">📍</div>
+
+                </div>
+
+                <br>
+
+                <a href="#" class="btn btn-primary">
+                    Find ATM
+                </a>
+
+            </div>
+
+
+            <div class="location-card">
+
+                <h3>Find a Branch</h3>
+
+                <p>
+                    Visit one of our branches for personalized
+                    banking assistance.
+                </p>
+
+                <div class="fake-map">
+
+                    <div class="map-road"></div>
+
+                    <div class="map-pin">📍</div>
+
+                </div>
+
+                <br>
+
+                <a href="#" class="btn btn-primary">
+                    Find Branch
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo" style="color:white;">
+                    <span class="logo-icon">N</span>
+                    Nexa Bank
+                </div>
+
+                <p>
+                    Banking built around your life.
+                    Secure, simple and designed for
+                    the modern customer.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Personal</h4>
+
+                <ul>
+                    <li>Accounts</li>
+                    <li>Cards</li>
+                    <li>Loans</li>
+                    <li>Digital Banking</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Support</h4>
+
+                <ul>
+                    <li>Contact Us</li>
+                    <li>FAQs</li>
+                    <li>Help Centre</li>
+                    <li>Branch Locator</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Company</h4>
+
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Investor Relations</li>
+                    <li>Privacy Policy</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 Nexa Bank. All rights reserved.
+            </span>
+
+            <span>
+                Secure Banking • Privacy • Terms
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
