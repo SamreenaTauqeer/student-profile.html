@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bano Qabil | Skills for a Brighter Pakistan</title>
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #123d32;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+
+        /* =========================================
+           COLORS
+        ========================================= */
+
+        :root {
+            --dark-green: #004d3c;
+            --green: #087f5b;
+            --light-green: #dff4e9;
+            --very-light-green: #f3fbf7;
+            --lime: #69c85b;
+            --dark: #123d32;
+            --text: #333d39;
+            --muted: #71807a;
+            --white: #ffffff;
+            --border: #e2ebe6;
+        }
+
+
+        /* =========================================
+           TOP BAR
+        ========================================= */
+
+        .topbar {
+            background: var(--dark-green);
+            color: white;
+            padding: 8px 6%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .top-left,
+        .top-right {
+            display: flex;
+            gap: 25px;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        header {
+            background: white;
+            border-bottom: 1px solid #edf1ef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1250px;
+            height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-symbol {
+            width: 50px;
+            height: 50px;
+            background: var(--green);
+            border-radius: 50% 50% 45% 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            line-height: 1.05;
+        }
+
+        .logo-text strong {
+            display: block;
+            color: var(--dark-green);
+            font-size: 23px;
+        }
+
+        .logo-text span {
+            color: var(--green);
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-button {
+            background: var(--dark-green);
+            color: white;
+            padding: 13px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: 500px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #ffffff 45%,
+                    rgba(255,255,255,.75) 60%,
+                    rgba(255,255,255,.05) 100%
+                );
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+
+            min-height: 500px;
+
+            display: grid;
+            grid-template-columns: 45% 55%;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 50px 0;
+        }
+
+        .hero-small {
+            color: var(--green);
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5vw, 64px);
+            line-height: 1.04;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-description {
+            color: var(--text);
+            font-size: 17px;
+            max-width: 520px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            border: 1px solid transparent;
+            transition: .3s;
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: white;
+        }
+
+        .btn-green:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .btn-outline:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        .hero-image {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-image::before {
+            content: "";
+            position: absolute;
+            left: -100px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                white,
+                rgba(255,255,255,0)
+            );
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           HIGHLIGHTS
+        ========================================= */
+
+        .highlights {
+            width: 90%;
+            max-width: 1120px;
+            margin: 30px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.07);
+
+            position: relative;
+            z-index: 5;
+        }
+
+        .highlight {
+            padding: 25px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .highlight:last-child {
+            border-right: none;
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            margin: auto auto 10px;
+
+            border-radius: 50%;
+
+            background: var(--light-green);
+            color: var(--green);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+        }
+
+        .highlight h4 {
+            color: var(--dark);
+            margin-bottom: 3px;
+        }
+
+        .highlight p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           GENERAL SECTION
+        ========================================= */
+
+        .section {
+            padding: 90px 6%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark);
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 span {
+            color: var(--green);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .section-line {
+            width: 45px;
+            height: 3px;
+            background: var(--green);
+            margin: 12px auto;
+        }
+
+
+        /* =========================================
+           PROGRAMS
+        ========================================= */
+
+        .program-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .program-card {
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            overflow: hidden;
+            background: white;
+
+            transition: .3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.09);
+        }
+
+        .program-image {
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .program-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .program-content {
+            padding: 20px;
+        }
+
+        .program-icon {
+            width: 42px;
+            height: 42px;
+
+            background: var(--green);
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: -40px;
+            position: relative;
+
+            border: 4px solid white;
+        }
+
+        .program-content h3 {
+            color: var(--dark);
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+
+        .program-content p {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 48px;
+        }
+
+        .learn {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           STATISTICS
+        ========================================= */
+
+        .stats {
+            background: var(--dark-green);
+            color: white;
+
+            padding: 25px 6%;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            max-width: 1200px;
+            margin: 60px auto 0;
+
+            border-radius: 14px;
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,.2);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: #75d765;
+            font-size: 30px;
+        }
+
+        .stat p {
+            font-size: 13px;
+            color: #d5e8df;
+        }
+
+
+        /* =========================================
+           WHY CHOOSE US
+        ========================================= */
+
+        .why {
+            background: var(--very-light-green);
+        }
+
+        .why-container {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .why-image {
+            height: 370px;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .why-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .why-content h2 {
+            font-size: 38px;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .why-content h2 span {
+            color: var(--green);
+        }
+
+        .benefit {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon {
+            min-width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+            background: var(--light-green);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: var(--green);
+            font-size: 20px;
+        }
+
+        .benefit h4 {
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .benefit p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           SUCCESS STORIES
+        ========================================= */
+
+        .stories {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .story {
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 25px;
+            background: white;
+        }
+
+        .story-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .student-photo {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .student-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .story h4 {
+            color: var(--dark);
+            margin-top: 12px;
+        }
+
+        .story small {
+            color: var(--green);
+        }
+
+
+        /* =========================================
+           CAMPUS
+        ========================================= */
+
+        .campuses {
+            background: var(--very-light-green);
+        }
+
+        .campus-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .campus {
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .campus img {
+            height: 130px;
+            object-fit: cover;
+        }
+
+        .campus h4 {
+            text-align: center;
+            padding: 12px;
+            color: var(--dark);
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .cta {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: 70px auto;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    var(--dark-green),
+                    var(--green)
+                );
+
+            color: white;
+
+            padding: 35px 45px;
+
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .cta p {
+            color: #d7eee5;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--dark-green);
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background: #02372d;
+            color: white;
+            padding: 65px 6% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: #b7d0c7;
+            font-size: 13px;
+            max-width: 300px;
+        }
+
+        footer h4 {
+            color: #74d763;
+            margin-bottom: 18px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 9px;
+            color: #c5d9d2;
+            font-size: 13px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 9px;
+            margin-top: 18px;
+        }
+
+        .social {
+            width: 35px;
+            height: 35px;
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 40px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,.15);
+
+            text-align: center;
+
+            color: #a7c0b7;
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width: 1000px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 70px 0 30px;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .program-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .campus-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+
+            .why-image {
+                height: 320px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media(max-width: 650px) {
+
+            .topbar {
+                display: none;
+            }
+
+            .navbar {
+                height: 70px;
+            }
+
+            .logo-text strong {
+                font-size: 19px;
+            }
+
+            .logo-symbol {
+                width: 42px;
+                height: 42px;
+            }
+
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-image {
+                height: 280px;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .highlight {
+                padding: 18px 8px;
+            }
+
+            .highlight:nth-child(2) {
+                border-right: none;
+            }
+
+            .section {
+                padding: 65px 5%;
+            }
+
+            .section-heading h2 {
+                font-size: 31px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .stat {
+                border-right: none;
+            }
+
+            .stories {
+                grid-template-columns: 1fr;
+            }
+
+            .campus-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
+
+    <div class="topbar">
+
+        <div class="top-left">
+            <span>📞 +92 21 1234567</span>
+            <span>✉ info@example.org</span>
+        </div>
+
+        <div class="top-right">
+            <span>Student Portal</span>
+            <span>Careers</span>
+            <span>Blog</span>
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+
+                <div class="logo-symbol">
+                    🎓
+                </div>
+
+                <div class="logo-text">
+                    <strong>Bano Qabil</strong>
+                    <span>Skills for a Brighter Pakistan</span>
+                </div>
+
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About Us</a>
+                </li>
+
+                <li>
+                    <a href="#programs">Programs</a>
+                </li>
+
+                <li>
+                    <a href="#stories">Success Stories</a>
+                </li>
+
+                <li>
+                    <a href="#campuses">Campuses</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <a href="#register" class="nav-button">
+                Register Now
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    Empowering Youth, Transforming Pakistan
+                </div>
+
+                <h1>
+                    Learn Skills.
+                    <br>
+                    Build a Better
+                    <br>
+                    <span>Tomorrow.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A modern learning platform designed to
+                    equip young people with in-demand digital
+                    and technical skills for a brighter future.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#programs" class="btn btn-green">
+                        Get Started →
+                    </a>
+
+                    <a href="#about" class="btn btn-outline">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                    alt="Students learning together"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         HIGHLIGHTS
+    ========================================== -->
+
+    <div class="highlights">
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+                💻
+            </div>
+
+            <h4>IT & Digital Skills</h4>
+
+            <p>
+                Learn in-demand digital skills
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+                💼
+            </div>
+
+            <h4>Career Growth</h4>
+
+            <p>
+                Build a stronger future
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+                👥
+            </div>
+
+            <h4>Youth Empowerment</h4>
+
+            <p>
+                Skills for success
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">
+                🎓
+            </div>
+
+            <h4>Free Training</h4>
+
+            <p>
+                Opportunities for all
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         PROGRAMS
+    ========================================== -->
+
+    <section class="section" id="programs">
+
+        <div class="section-heading">
+
+            <h2>
+                Our <span>Programs</span>
+            </h2>
+
+            <div class="section-line"></div>
+
+            <p>
+                Choose from modern, industry-relevant
+                programs and start your journey towards
+                a better future.
+            </p>
+
+        </div>
+
+
+        <div class="program-grid">
+
+
+            <!-- PROGRAM 1 -->
+
+            <div class="program-card">
+
+                <div class="program-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                        alt="Web development"
+                    >
+
+                </div>
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        HTML, CSS, JavaScript,
+                        frameworks and modern web development.
+                    </p>
+
+                    <a href="#" class="learn">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRAM 2 -->
+
+            <div class="program-card">
+
+                <div class="program-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+                        alt="Programming"
+                    >
+
+                </div>
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🐍
+                    </div>
+
+                    <h3>Python Programming</h3>
+
+                    <p>
+                        Learn programming fundamentals,
+                        Python and practical development.
+                    </p>
+
+                    <a href="#" class="learn">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRAM 3 -->
+
+            <div class="program-card">
+
+                <div class="program-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80"
+                        alt="Mobile application development"
+                    >
+
+                </div>
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        📱
+                    </div>
+
+                    <h3>Mobile App Development</h3>
+
+                    <p>
+                        Learn how modern Android and
+                        mobile applications are created.
+                    </p>
+
+                    <a href="#" class="learn">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRAM 4 -->
+
+            <div class="program-card">
+
+                <div class="program-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80"
+                        alt="Graphic design"
+                    >
+
+                </div>
+
+                <div class="program-content">
+
+                    <div class="program-icon">
+                        🎨
+                    </div>
+
+                    <h3>Graphic Design</h3>
+
+                    <p>
+                        Learn design principles, branding,
+                        Photoshop and digital creativity.
+                    </p>
+
+                    <a href="#" class="learn">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <h3>50K+</h3>
+
+                <p>
+                    Students Trained
+                </p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>200+</h3>
+
+                <p>
+                    Course Offerings
+                </p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>10+</h3>
+
+                <p>
+                    Partner Organizations
+                </p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>4.8/5</h3>
+
+                <p>
+                    Student Satisfaction
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         WHY CHOOSE US
+    ========================================== -->
+
+    <section class="section why" id="about">
+
+        <div class="why-container">
+
+
+            <div class="why-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80"
+                    alt="Students studying together"
+                >
+
+            </div>
+
+
+            <div class="why-content">
+
+                <h2>
+                    Why Choose
+                    <span>Bano Qabil?</span>
+                </h2>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Industry-Relevant Skills
+                        </h4>
+
+                        <p>
+                            Learn practical skills that
+                            employers actually need.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        👨‍🏫
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Expert Trainers
+                        </h4>
+
+                        <p>
+                            Learn from experienced
+                            industry professionals.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ♾
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Flexible Learning
+                        </h4>
+
+                        <p>
+                            Learn at a pace and schedule
+                            that works for you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Recognized Certification
+                        </h4>
+
+                        <p>
+                            Build credentials that support
+                            your career opportunities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SUCCESS STORIES
+    ========================================== -->
+
+    <section class="section" id="stories">
+
+        <div class="section-heading">
+
+            <h2>
+                Success <span>Stories</span>
+            </h2>
+
+            <div class="section-line"></div>
+
+            <p>
+                Hear from students who started their
+                journey with us.
+            </p>
+
+        </div>
+
+
+        <div class="stories">
+
+
+            <div class="story">
+
+                <div class="story-top">
+
+                    <div class="student-photo">
+
+                        <img
+                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            alt="Student"
+                        >
+
+                    </div>
+
+                    <div>
+                        <strong>Usman Ali</strong>
+                        <br>
+                        <small>Web Developer</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    "The training helped me gain practical
+                    skills and gave me confidence to start
+                    my professional journey."
+                </p>
+
+                <h4>
+                    Web Development Graduate
+                </h4>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-top">
+
+                    <div class="student-photo">
+
+                        <img
+                            src="https://randomuser.me/api/portraits/women/44.jpg"
+                            alt="Student"
+                        >
+
+                    </div>
+
+                    <div>
+                        <strong>Ayesha Khan</strong>
+                        <br>
+                        <small>Graphic Designer</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    "The practical learning environment
+                    helped me turn my creativity into
+                    a professional skill."
+                </p>
+
+                <h4>
+                    Graphic Design Graduate
+                </h4>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-top">
+
+                    <div class="student-photo">
+
+                        <img
+                            src="https://randomuser.me/api/portraits/men/46.jpg"
+                            alt="Student"
+                        >
+
+                    </div>
+
+                    <div>
+                        <strong>Bilal Ahmed</strong>
+                        <br>
+                        <small>Digital Marketer</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    "A great platform for learning and
+                    professional growth. Highly recommended."
+                </p>
+
+                <h4>
+                    Digital Marketing Graduate
+                </h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CAMPUSES
+    ========================================== -->
+
+    <section class="section campuses" id="campuses">
+
+        <div class="section-heading">
+
+            <h2>
+                Our <span>Campuses</span>
+            </h2>
+
+            <div class="section-line"></div>
+
+            <p>
+                Building opportunities for young people
+                across Pakistan.
+            </p>
+
+        </div>
+
+
+        <div class="campus-grid">
+
+
+            <div class="campus">
+
+                <img
+                    src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=600&q=80"
+                    alt="Karachi"
+                >
+
+                <h4>Karachi</h4>
+
+            </div>
+
+
+            <div class="campus">
+
+                <img
+                    src="https://images.unsplash.com/photo-1591448764624-d7973a442bff?auto=format&fit=crop&w=600&q=80"
+                    alt="Lahore"
+                >
+
+                <h4>Lahore</h4>
+
+            </div>
+
+
+            <div class="campus">
+
+                <img
+                    src="https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?auto=format&fit=crop&w=600&q=80"
+                    alt="Islamabad"
+                >
+
+                <h4>Islamabad</h4>
+
+            </div>
+
+
+            <div class="campus">
+
+                <img
+                    src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80"
+                    alt="Rawalpindi"
+                >
+
+                <h4>Rawalpindi</h4>
+
+            </div>
+
+
+            <div class="campus">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80"
+                    alt="Faisalabad"
+                >
+
+                <h4>Faisalabad</h4>
+
+            </div>
+
+
+            <div class="campus">
+
+                <img
+                    src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=600&q=80"
+                    alt="Multan"
+                >
+
+                <h4>Multan</h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CALL TO ACTION
+    ========================================== -->
+
+    <section id="register">
+
+        <div class="cta">
+
+            <div>
+
+                <h2>
+                    Ready to Upgrade Your Skills?
+                </h2>
+
+                <p>
+                    Take the first step towards building
+                    your future with practical digital skills.
+                </p>
+
+            </div>
+
+            <a href="#" class="btn">
+                Register Now →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer id="contact">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    🎓 Bano Qabil
+                </div>
+
+                <p>
+                    Empowering youth through practical
+                    digital education and career-focused
+                    skills for a brighter future.
+                </p>
+
+
+                <div class="socials">
+
+                    <div class="social">
+                        f
+                    </div>
+
+                    <div class="social">
+                        𝕏
+                    </div>
+
+                    <div class="social">
+                        ◎
+                    </div>
+
+                    <div class="social">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Programs</li>
+                    <li>Success Stories</li>
+                    <li>Contact</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Programs
+                </h4>
+
+                <ul>
+                    <li>Web Development</li>
+                    <li>Python Programming</li>
+                    <li>Mobile Development</li>
+                    <li>Graphic Design</li>
+                    <li>Digital Marketing</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Contact Us
+                </h4>
+
+                <ul>
+                    <li>📞 +92 21 1234567</li>
+                    <li>✉ info@example.org</li>
+                    <li>📍 Pakistan</li>
+                    <li>FAQs</li>
+                    <li>Privacy Policy</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Bano Qabil Inspired Educational Website.
+            All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
